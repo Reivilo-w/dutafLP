@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dutaf LP{% endblock %}
+
+{% block body %}
+<h1>Liste des articles</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Référence</th>
+            <th>Fournisseur</th>
+            <th>Prix</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for article in articles %}
+                <td>{{ article.reference }}</td>
+                <td>{{ article.fournisseur ? article.fournisseur.nom : '-' }}</td>
+                <td>{{ article.prix|number_format(2) }} €</td>
+                <td>
+                    <button class="btn btn-primary" data-article="{{ article.id }}">Acheter</button>
+                </td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
