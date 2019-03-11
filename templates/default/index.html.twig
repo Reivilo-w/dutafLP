@@ -20,7 +20,7 @@
                 <td>{{ article.fournisseur ? article.fournisseur.nom : '-' }}</td>
                 <td>{{ article.prix|number_format(2) }} €</td>
                 <td>
-                    <button class="btn btn-primary" data-article="{{ article.id }}">Acheter</button>
+                    <a href="{{ path('acheter',{id:article.id}) }}" class="btn btn-primary">Acheter</a>
                 </td>
             {% endfor %}
         </tr>
