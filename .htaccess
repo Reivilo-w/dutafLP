@@ -1,0 +1,1 @@
+Header always set Access-Control-Allow-Methods "GET, DELETE, PATCH, POST, PUT, OPTIONS"
